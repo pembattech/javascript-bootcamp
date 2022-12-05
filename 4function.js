@@ -11,6 +11,7 @@ function func1() {
 let func2 = function () {
     // statements
 }
+
 //3. Arrow function (es6+,most important ) more focus on this 
 //kiss (keep it short and simple )
 let func3 = () => function () {

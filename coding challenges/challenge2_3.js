@@ -40,7 +40,7 @@ let markHeight2 = 1.88;
 let johnWeight2 = 85;
 let johnHeight2 = 1.76;
 
-
+    
 let calBMI = (mass, height) => {
     BMI = mass / height ** 2
     return BMI
