@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="title">HELLO WORLD</h1>
+    <ul>
+        <li class="list">Banana</li>
+        <li class="list">Banana</li>
+        <li class="list">Banana</li>
+        <li class="list">Banana</li>
+        <li class="list">Banana</li>
+    </ul>
+
+    <ul>
+        <li class="list2">Apple</li>
+        <li class="list2">Apple</li>
+        <li class="list2">Apple</li>
+        <li class="list2">Apple</li>
+        <li class="list2">Apple</li>
+    </ul>
+
+    <script>
+        const title = document.getElementById("title")
+        title.innerText = "Hello PEMBA"; // Access text of that id and change to 'Hello PEMBA'
+        title.style.color = "red";
+
+        const list = document.querySelector(".list") // It select only first class
+        list.style.color = "yellow";
+        list.addEventListener("click", () => {
+            alert("Mouse click")
+        })
+
+        const list2 = document.querySelectorAll(".list2") // It store as nodelist of list2 element
+        list2.forEach(e => {
+            e.style.color = "blue"
+            e.addEventListener("click", () => {
+                alert("Mouse click 2")
+        })
+        })
+    </script>
+</body>
+
+</html>

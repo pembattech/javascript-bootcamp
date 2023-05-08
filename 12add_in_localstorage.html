@@ -1,0 +1,23 @@
+<input id="myInput" type="text" placeholder="Name Surname">
+
+<button onclick="myFunction()">Answer</button>
+
+<script>
+
+    function getName() {
+        return localStorage.getItem("userName");
+    }
+
+    function myFunction() {
+        // Gets input value
+        var name = document.getElementById("myInput").value;
+
+        // Saves data to retrieve later
+        localStorage.setItem("userName", name);
+
+        // Updates HTML
+        updateHTML();
+    }
+
+
+</script>

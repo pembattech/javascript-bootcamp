@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CallBack Function</title>
+  </head>
+
+  <body>
+    <div></div>
+    <script>
+      // array of news objects
+      let news = [
+        { newsTitle: "First Title", content: "This is the first news" },
+        { newsTitle: "Second Title", content: "This is the second news" },
+        { newsTitle: "Third Title", content: "This is the third news" },
+      ];
+
+      // function to display news titles after a delay of 4 seconds
+      const showNews = () => {
+        setTimeout(() => {
+          let result = "";
+          news.forEach((post) => {
+            result += `<li>${post.newsTitle}</li>`;
+          });
+          document.querySelector("div").innerHTML = result; // display the news titles in the div element
+        }, 4000);
+      };
+      showNews(); // call showNews function
+
+      // function to add a new news object to the array after a delay of 6 seconds
+      const addNews = (newsData) => {
+        return new Promise((resolve, reject) => {
+          // create a promise that resolves or rejects after 6 seconds
+          setTimeout(() => {
+            news.push(newsData); // add the new news object to the news array
+            let error = false; // simulate error as false
+            if (!error) {
+              // if there is no error, resolve the promise
+              resolve();
+            } else {
+              // if there is an error, reject the promise with an error message
+              reject("Error: Something went wrong.");
+            }
+          }, 6000);
+        });
+      };
+
+      // async function to add a new news object and show the news titles after adding the new object
+      const demoFunction = async () => {
+        try {
+          await addNews({
+            newsTitle: "fourth title",
+            content: "this is fourth content",
+          }); // wait for the addNews function to complete and add the new news object to the array
+          await alert("Done"); // show an alert message after the addNews function completes
+          showNews(); // call the showNews function to display the updated news titles after adding the new news object
+        } catch (err) {
+          console.log(err); // log any error to the console
+        }
+      };
+      demoFunction(); // call the demoFunction
+    </script>
+  </body>
+</html>

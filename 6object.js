@@ -40,3 +40,4 @@ let str1="apple".split('').reduce((acc,curr)=>{
     return acc;
 },{})
 console.log(str1)
+

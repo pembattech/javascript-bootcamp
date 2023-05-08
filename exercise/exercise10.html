@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main-div">
+
+        <input type="text" id="num1">
+        <br>
+        <br>
+        <input type="text" id="num2">
+
+        <h4 class="result">Result: </h4>
+
+        <button id="add-btn"> ADD</button>
+        <button id="sub-btn"> SUB</button>
+        <button id="mul-btn"> MUL</button>
+        <br>
+        <button id="div-btn"> DIV</button>
+        <button id="mod-btn"> MOD</button>
+
+    </div>
+
+    <script>
+        const num1= document.getElementById("num1").value
+        num1.addEventListener("keyup", () => {
+            const inputValue = num1.value;
+            console.log(inputValue)
+        })
+
+
+        // function result() {
+        //     document.getElementById('result').value += val
+        //     return val
+
+        // }
+
+        // function solve() {
+
+        // let x = document.getElementById('result').value
+
+        // let y = eval(x);
+
+        // document.getElementById('result').value = y
+
+        // return y
+
+        // }
+    </script>
+</body>
+
+</html>

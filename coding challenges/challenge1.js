@@ -7,4 +7,3 @@ Logical Operators and Ternary Operator.
 let isTritonCollegeOpen = (currentTime, isWednesday, isHoliday) => {
     currentTime >= 6 && currentTime <= 10 && !isWednesday && !isHoliday ? console.log("Triton college is open.") : console.log("Triton college is close")
 }
-isTritonCollegeOpen(7, false, false)

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Persistence Testing</title>
+    <style>
+        form {
+            padding: 0.5rem 2rem;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="fname" placeholder="FirstName" />
+        <input type="text" id="lname" placeholder="LastName" />
+
+        <input type="text" id="email" placeholder="Age" />
+
+        <button onclick="LocalDataStore()">Add</button>
+    </form>
+
+    <script>
+        function LocalDataStore() {
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var email = document.getElementById('email').value;
+            var taskData = {
+                "fname": fname,
+                "lname": lname,
+                "email": email
+            };
+
+            localStorage.setItem("task5", JSON.stringify(taskData));
+
+        }
+    </script>
+</body>
+
+</html>

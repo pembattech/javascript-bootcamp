@@ -1,0 +1,40 @@
+<!-- ## WRITE TITLE BY FETCHING LOCAL STORAGE FIRST NAME -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local storage</title>
+</head>
+<body>
+    <h1> LOCAL STORAGE & JSON</h1>
+
+    <input type="text" id="firstname" class="input_title"">
+
+    <script>
+        
+        const json_data={
+            'firstname':'pemba',
+            'lastname':'mainali',
+            'age':'55',
+            'email':'bidurmainali70@gmail.com'
+
+        }
+        const json_to_str=JSON.stringify(json_data)//converts json to string
+        localStorage.setItem('personal details',json_to_str)
+        const personal_details_data=localStorage.getItem('personal details')
+        const str_to_obj= JSON.parse(personal_details_data)//convert string to object
+        console.log(str_to_obj)
+        // document.write(`UserName: ${str_to_obj.firstname}`)
+
+
+        const title = document.getElementById("firstname")
+        title.value = str_to_obj.firstname
+
+
+    
+    </script>
+    
+</body>
+</html>
